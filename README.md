@@ -1,6 +1,5 @@
 # API de Gestão da Livraria — Grupo N
-Projeto da UC de Programação Back-End — Curso Técnico em Desenvolvimento de Sistemas
-Escola SENAI "Santo Paschoal Crepaldi" — Turma 1-2026-SESI_DEV_OC_1
+Projeto da UC de Programação Back-End — Curso Técnico em Desenvolvimento de Sistemas Escola SENAI "Santo Paschoal Crepaldi" — Turma 1-2026-SESI_DEV_OC_1
 
 ## Integrantes
 - Nome Completo 1 — @usuario-github
