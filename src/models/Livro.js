@@ -1,5 +1,6 @@
 const PRECO_MINIMO = 0;
-class Livro { //Nome definido
+class Livro {
+  //Nome definido
   #preco;
   #estoque;
 
@@ -40,6 +41,14 @@ class Livro { //Nome definido
     this.#preco = novoPreco;
   }
 
+  toJSON() {
+    return {
+      titulo: this.titulo,
+      autor: this.autor,
+      preco: this.#preco,
+      estoque: this.#estoque,
+    };
+  }
 }
 
 module.exports = Livro;
