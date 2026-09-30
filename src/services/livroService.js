@@ -9,12 +9,32 @@ const livros = [
   new Livro("Eloquent JavaScript", "Marijn Haverbeke", 45.0, 20),
 ];
 
-function listarLivros() {
+function listarTodos() {
   return livros;
 }
 
 function buscarLivroPorIndice(indice) {
   return livros[indice];
+}
+
+function listarLivros(filtros) {
+  let resultado = livros;
+  if (filtros.autor) {
+    resultado = resultado.filter((livro) =>
+      livro.autor.toLowerCase().includes(filtros.autor.toLowerCase()),
+    );
+  }
+  if (filtros.precoMax) {
+    resultado = resultado.filter(
+      (livro) => livro.preco <= Number(filtros.precoMax),
+    );
+  }
+  if (filtros.estoqueMin) {
+    resultado = resultado.filter(
+      (livro) => livro.estoque >= Number(filtros.estoqueMin),
+    );
+  }
+  return resultado;
 }
 
 function criarLivro(dados) {
@@ -59,6 +79,7 @@ function deletarLivro(indice) {
 }
 
 module.exports = {
+  listarTodos,
   listarLivros,
   buscarLivroPorIndice,
   criarLivro,
