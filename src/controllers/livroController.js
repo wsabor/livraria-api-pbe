@@ -20,4 +20,43 @@ function buscarPorIndice(req, res) {
   res.json(livro);
 }
 
-module.exports = { listar, buscarPorIndice };
+function criar(req, res) {
+  const novoLivro = livroService.criarLivro(req.body);
+  res.status(201).json(novoLivro);
+}
+
+function atualizar(req, res) {
+  const livro = livroService.atualizarLivro(req.params.indice, req.body);
+  if (!livro) {
+    res.status(404).json({ erro: "Livro nao encontrado" });
+    return;
+  }
+  res.status(200).json(livro);
+}
+
+function atualizarParcial(req, res) {
+  const livro = livroService.atualizarParcialLivro(req.params.indice, req.body);
+  if (!livro) {
+    res.status(404).json({ erro: "Livro nao encontrado" });
+    return;
+  }
+  res.status(200).json(livro);
+}
+
+function deletar(req, res) {
+  const sucesso = livroService.deletarLivro(req.params.indice);
+  if (!sucesso) {
+    res.status(404).json({ erro: "Livro nao encontrado" });
+    return;
+  }
+  res.status(204).send();
+}
+
+module.exports = {
+  listar,
+  buscarPorIndice,
+  criar,
+  atualizar,
+  atualizarParcial,
+  deletar,
+};

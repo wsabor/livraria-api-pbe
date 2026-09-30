@@ -41,6 +41,13 @@ class Livro {
     this.#preco = novoPreco;
   }
 
+  set estoque(novoEstoque) {
+    if (novoEstoque < 0) {
+      throw new Error("Estoque nao pode ser negativo");
+    }
+    this.#estoque = novoEstoque;
+  }
+
   toJSON() {
     return {
       titulo: this.titulo,
