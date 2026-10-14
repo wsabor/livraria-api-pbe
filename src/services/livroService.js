@@ -24,9 +24,19 @@ function listarLivros(filtros) {
       livro.autor.toLowerCase().includes(filtros.autor.toLowerCase()),
     );
   }
+  if (filtros.titulo) {
+    resultado = resultado.filter((livro) =>
+      livro.titulo.toLowerCase().includes(filtros.titulo.toLowerCase()),
+    );
+  }
   if (filtros.precoMax) {
     resultado = resultado.filter(
       (livro) => livro.preco <= Number(filtros.precoMax),
+    );
+  }
+  if (filtros.precoMin) {
+    resultado = resultado.filter(
+      (livro) => livro.preco >= Number(filtros.precoMin),
     );
   }
   if (filtros.estoqueMin) {
