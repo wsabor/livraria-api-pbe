@@ -107,7 +107,7 @@ Explicar com a imagem da fila: quando alguém sai da frente, todo mundo anda uma
 
 ### Atividade em grupo (35 min)
 
-Distribuir `03-atividade-consolidacao-grupo.md` (Atividade 14):
+Distribuir `03-atividade-consolidacao-grupo.md` (Atividade 13.1):
 
 1. Marcar o tipo de parâmetro em 4 requisições (5 min).
 2. Conferência dos 5 métodos, com tabela esperado × obtido, terminando no mistério do DELETE (15 min).
@@ -135,7 +135,7 @@ Ganchos:
 
 ## Avaliação formativa
 
-**Instrumento:** exercícios de parâmetros (Atividade 14).
+**Instrumento:** exercícios de parâmetros (Atividade 13.1).
 
 | Critério | O que caracteriza domínio |
 |---|---|

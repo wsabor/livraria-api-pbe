@@ -1,4 +1,4 @@
-# 🔑 Gabarito — Atividade 14: Conferindo a API
+# 🔑 Gabarito — Atividade 13.1: Conferindo a API
 
 **Uso exclusivo do professor.**
 
