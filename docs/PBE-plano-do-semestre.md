@@ -52,10 +52,10 @@ _Replanejado em 30/09/2026; conferido em 13/10/2026 contra `PBE-2026-10-09.xlsx`
 | 22  | 02/10 | ✅     | Consolidação dos três tipos de parâmetro; revisão do CRUD em memória         | Filtros por query params; conferência dos 5 métodos        | Formativa: exercícios de parâmetros                      |
 | —   | 07/10 | ✅     | **CARGA REDUZIDA — Semana da Criança**                                       | Pendências da API em memória, sem conteúdo novo            | Formativa: checagem de pendências                        |
 | —   | 09/10 | ✅     | **CARGA REDUZIDA — Semana da Criança**                                       | Pendências da API em memória, sem conteúdo novo            | Formativa: checagem de pendências                        |
-| 23  | 14/10 | ⬜     | Princípios REST: recursos, semântica de URL; troca do índice por `id`        | CRUD REST em memória completo com `id` (Livro e Categoria) | Formativa: CRUD REST em memória                          |
-| 24  | 16/10 | ⬜     | Testes sistemáticos com Postman: coleções e variáveis                        | Coleção Postman cobrindo o CRUD                            | Formativa: coleção Postman                               |
-| 25  | 21/10 | ⬜     | Validação de entrada e tratamento de erros (400/404/500); middleware de erro | Validações e respostas de erro padronizadas                | Formativa: casos de erro tratados                        |
-| 26  | 23/10 | ⬜     | Consolidação do Bloco 3                                                      | Ajustes finais da API em memória                           | **Formativa: ENTREGA** da API RESTful em memória (grupo) |
+| 23  | 14/10 | ✅     | Princípios REST: recursos, semântica de URL; troca do índice por `id`        | CRUD REST em memória completo com `id` (Livro e Categoria) | Formativa: CRUD REST em memória                          |
+| 24  | 16/10 | ✅     | Testes sistemáticos com Postman: coleções e variáveis                        | Coleção Postman cobrindo o CRUD                            | Formativa: coleção Postman                               |
+| 25  | 21/10 | ✅     | Validação de entrada e tratamento de erros (400/404/500); middleware de erro | Validações e respostas de erro padronizadas                | Formativa: casos de erro tratados                        |
+| 26  | 23/10 | ✅     | Consolidação do Bloco 3                                                      | Ajustes finais da API em memória                           | **Formativa: ENTREGA** da API RESTful em memória (grupo) |
 
 ### Bloco 4 — Persistência em MySQL com SQL puro (sem ORM)
 

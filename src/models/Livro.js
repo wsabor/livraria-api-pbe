@@ -50,6 +50,7 @@ class Livro {
 
   toJSON() {
     return {
+      id: this.id,
       titulo: this.titulo,
       autor: this.autor,
       preco: this.#preco,
