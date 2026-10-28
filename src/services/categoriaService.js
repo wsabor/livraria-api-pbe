@@ -2,17 +2,67 @@
 
 const Categoria = require("../models/Categoria");
 
-const categorias = [
-  new Categoria("Ficção", "Romances, fantasia e ficção científica"),
-  new Categoria("Tecnologia", "Programação, engenharia de software e afins"),
-];
+const categorias = [];
+let proximoId = 1;
 
-function listarCategorias() {
-  return categorias;
+criarCategoria({ nome: "Ficção", descricao: "Romances, fantasia e ficção científica" });
+criarCategoria({ nome: "Tecnologia", descricao: "Programação, engenharia de software e afins" });
+
+function listarCategorias(filtros) {
+  let resultado = categorias;
+
+  if (filtros.nome) {
+    resultado = resultado.filter((categoria) =>
+      categoria.nome.toLowerCase().includes(filtros.nome.toLowerCase()),
+    );
+  }
+
+  return resultado;
 }
 
-function buscarCategoriaPorIndice(indice) {
-  return categorias[indice];
+function buscarCategoriaPorId(id) {
+  return categorias.find((categoria) => categoria.id === Number(id));
 }
 
-module.exports = { listarCategorias, buscarCategoriaPorIndice };
+function criarCategoria(dados) {
+  const novaCategoria = new Categoria(dados.nome, dados.descricao);
+  novaCategoria.id = proximoId;
+  proximoId++;
+  categorias.push(novaCategoria);
+  return novaCategoria;
+}
+
+function atualizarCategoria(id, dados) {
+  const categoria = buscarCategoriaPorId(id);
+  if (!categoria) return null;
+
+  categoria.nome = dados.nome;
+  categoria.descricao = dados.descricao;
+  return categoria;
+}
+
+function atualizarParcialCategoria(id, dados) {
+  const categoria = buscarCategoriaPorId(id);
+  if (!categoria) return null;
+
+  if (dados.nome !== undefined) categoria.nome = dados.nome;
+  if (dados.descricao !== undefined) categoria.descricao = dados.descricao;
+  return categoria;
+}
+
+function deletarCategoria(id) {
+  const posicao = categorias.findIndex((categoria) => categoria.id === Number(id));
+  if (posicao === -1) return false;
+
+  categorias.splice(posicao, 1);
+  return true;
+}
+
+module.exports = {
+  listarCategorias,
+  buscarCategoriaPorId,
+  criarCategoria,
+  atualizarCategoria,
+  atualizarParcialCategoria,
+  deletarCategoria,
+};

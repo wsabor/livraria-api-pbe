@@ -28,6 +28,10 @@ class Categoria { // Nome claro, evidencia
         this.#nome = novoNome;
     }
 
+    set descricao(novaDescricao) {
+        this.#descricao = novaDescricao;
+    }
+
     // ----- MÉTODO -----
 
     descrever(){ //Método curto já está bem definido
@@ -37,6 +41,7 @@ class Categoria { // Nome claro, evidencia
 
     toJSON() {
         return {
+            id: this.id,
             nome: this.#nome,
             descricao: this.#descricao,
         };
