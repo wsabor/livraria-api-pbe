@@ -2,3 +2,4 @@ node_modules/
 alunos/
 aulas/
 .DS_Store
+.env

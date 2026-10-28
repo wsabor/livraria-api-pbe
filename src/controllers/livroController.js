@@ -9,9 +9,9 @@ const livroService = require("../services/livroService");
 //   res.json(livros);
 // }
 
-function listar(req, res) {
+async function listar(req, res) {
   const filtros = req.query;
-  const livros = livroService.listarLivros(filtros);
+  const livros = await livroService.listarLivros(filtros);
   res.status(200).json(livros);
 }
 

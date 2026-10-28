@@ -2,6 +2,7 @@
 // Buscar, calcular, validar.
 // Implementacao chega no Bloco 3.
 
+const { db } = require("../config/db");
 const Livro = require("../models/Livro");
 
 const livros = [];
@@ -24,8 +25,9 @@ function buscarLivroPorId(id) {
 //   return livros[indice];
 // }
 
-function listarLivros(filtros) {
-  let resultado = livros;
+async function listarLivros(filtros) {
+  const [linhas] = await db.query("SELECT * FROM livros");
+  let resultado = linhas;
   if (filtros.autor) {
     resultado = resultado.filter((livro) =>
       livro.autor.toLowerCase().includes(filtros.autor.toLowerCase()),
@@ -62,10 +64,16 @@ function validarLivro(dados, completo) {
   if (completo && dados.preco === undefined) return "O preco e obrigatorio";
   if (completo && dados.estoque === undefined) return "O estoque e obrigatorio";
 
-  if (dados.preco !== undefined && (typeof dados.preco !== "number" || dados.preco < 0)) {
+  if (
+    dados.preco !== undefined &&
+    (typeof dados.preco !== "number" || dados.preco < 0)
+  ) {
     return "O preco deve ser um numero maior ou igual a zero";
   }
-  if (dados.estoque !== undefined && (typeof dados.estoque !== "number" || dados.estoque < 0)) {
+  if (
+    dados.estoque !== undefined &&
+    (typeof dados.estoque !== "number" || dados.estoque < 0)
+  ) {
     return "O estoque deve ser um numero maior ou igual a zero";
   }
 
