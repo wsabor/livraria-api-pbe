@@ -17,11 +17,23 @@ function buscarPorId(req, res) {
 }
 
 function criar(req, res) {
+  const erro = categoriaService.validarCategoria(req.body, true);
+  if (erro) {
+    res.status(400).json({ erro: erro });
+    return;
+  }
+
   const novaCategoria = categoriaService.criarCategoria(req.body);
   res.status(201).json(novaCategoria);
 }
 
 function atualizar(req, res) {
+  const erro = categoriaService.validarCategoria(req.body, true);
+  if (erro) {
+    res.status(400).json({ erro: erro });
+    return;
+  }
+
   const categoria = categoriaService.atualizarCategoria(req.params.id, req.body);
   if (!categoria) {
     res.status(404).json({ erro: "Categoria nao encontrada" });
@@ -31,6 +43,12 @@ function atualizar(req, res) {
 }
 
 function atualizarParcial(req, res) {
+  const erro = categoriaService.validarCategoria(req.body, false);
+  if (erro) {
+    res.status(400).json({ erro: erro });
+    return;
+  }
+
   const categoria = categoriaService.atualizarParcialCategoria(req.params.id, req.body);
   if (!categoria) {
     res.status(404).json({ erro: "Categoria nao encontrada" });

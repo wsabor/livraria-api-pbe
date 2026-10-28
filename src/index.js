@@ -1,6 +1,8 @@
 const express = require("express"); //Traz a biblioteca instalada
 const routes = require("./routes");
 const logger = require("./middlewares/logger");
+const rotaNaoEncontrada = require("./middlewares/rotaNaoEncontrada");
+const tratarErros = require("./middlewares/tratarErros");
 
 const app = express();
 const PORTA = 3000;
@@ -13,6 +15,9 @@ app.get("/", (req, res) => {
   //res é requisição e res é resposta
   res.send("API da Livraria no ar!");
 });
+
+app.use(rotaNaoEncontrada);
+app.use(tratarErros);
 
 app.listen(PORTA, () => {
   console.log("Servidor rodando em http://localhost:" + PORTA);

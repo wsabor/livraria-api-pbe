@@ -24,6 +24,18 @@ function buscarCategoriaPorId(id) {
   return categorias.find((categoria) => categoria.id === Number(id));
 }
 
+function validarCategoria(dados, completo) {
+  if (!dados) return "Envie os dados da categoria em JSON";
+
+  if (completo && !dados.nome) return "O nome e obrigatorio";
+
+  if (dados.nome !== undefined && (typeof dados.nome !== "string" || dados.nome.length < 3)) {
+    return "O nome deve ter pelo menos 3 letras";
+  }
+
+  return null;
+}
+
 function criarCategoria(dados) {
   const novaCategoria = new Categoria(dados.nome, dados.descricao);
   novaCategoria.id = proximoId;
@@ -59,6 +71,7 @@ function deletarCategoria(id) {
 }
 
 module.exports = {
+  validarCategoria,
   listarCategorias,
   buscarCategoriaPorId,
   criarCategoria,

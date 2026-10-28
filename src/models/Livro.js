@@ -35,8 +35,7 @@ class Livro {
 
   set preco(novoPreco) {
     if (novoPreco < PRECO_MINIMO) {
-      console.log("ERRO: preco não pode ser negativo.Valor recusado");
-      return;
+      throw new Error("Preco nao pode ser negativo");
     }
     this.#preco = novoPreco;
   }
