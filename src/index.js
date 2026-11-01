@@ -15,7 +15,7 @@ app.use(logger);
 app.use(routes);
 
 app.get("/", (req, res) => {
-  //res é requisição e res é resposta
+  //req é requisição e res é resposta
   res.send("API da Livraria no ar!");
 });
 
