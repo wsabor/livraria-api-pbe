@@ -21,6 +21,3 @@ INSERT INTO livros (titulo, autor, preco, estoque) VALUES
   ('Dom Casmurro', 'Machado de Assis', 29.90, 15);
 
 SELECT * FROM livros;
-SELECT * FROM livros WHERE id = 3;
-UPDATE livros SET preco = 34.9, estoque = 10 WHERE id = 5;
-SELECT * FROM livros WHERE id = 4;

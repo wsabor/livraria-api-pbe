@@ -53,7 +53,7 @@ async function atualizarParcial(req, res) {
     return;
   }
 
-  const livro = awaitlivroService.atualizarParcialLivro(
+  const livro = await livroService.atualizarParcialLivro(
     req.params.id,
     req.body,
   );
