@@ -789,6 +789,41 @@
               ]
             }
           }
+        },
+        {
+          "name": "4 - Livros de uma categoria",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Status code is 200\", function () {",
+                  "    pm.response.to.have.status(200);",
+                  "});"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/livros?categoria=tec",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "livros"
+              ],
+              "query": [
+                {
+                  "key": "categoria",
+                  "value": "tec"
+                }
+              ]
+            }
+          }
         }
       ]
     }
