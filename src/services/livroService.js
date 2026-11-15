@@ -38,6 +38,13 @@ async function listarLivros(filtros) {
       (livro) => livro.estoque >= Number(filtros.estoqueMin),
     );
   }
+  if (filtros.categoria) {
+    resultado = resultado.filter(
+      (livro) =>
+        livro.categoria !== null &&
+        livro.categoria.toLowerCase().includes(filtros.categoria.toLowerCase()),
+    );
+  }
   return resultado;
 }
 
