@@ -25,11 +25,18 @@ CREATE TABLE livros (
 
 INSERT INTO categorias (nome, descricao) VALUES
   ('Ficção', 'Romances, fantasia e ficção científica'),
-  ('Tecnologia', 'Programação, engenharia de software e afins');
+  ('Tecnologia', 'Programação, engenharia de software e afins'),
+  ('Infantil', 'Livros para criancas');
 
+-- Carga inicial: os 3 livros do começo ficam primeiro, na mesma ordem.
 INSERT INTO livros (titulo, autor, preco, estoque, categoria_id) VALUES
   ('Clean Code', 'Robert C. Martin', 89.90, 12, 2),
   ('Eloquent JavaScript', 'Marijn Haverbeke', 45.00, 20, 2),
-  ('O Hobbit', 'J.R.R. Tolkien', 39.90, 8, 1);
+  ('O Hobbit', 'J.R.R. Tolkien', 39.90, 8, 1),
+  ('O Pequeno Príncipe', 'Antoine de Saint-Exupéry', 29.90, 10, 3),
+  ('Dom Casmurro', 'Machado de Assis', 29.90, 15, 1),
+  ('A Revolução dos Bichos', 'George Orwell', 34.90, 10, 1),
+  ('JavaScript: O Guia Definitivo', 'David Flanagan', 199.90, 5, 2),
+  ('Harry Potter e a Pedra Filosofal', 'J.K. Rowling', 49.90, 25, 3);
 
 SELECT * FROM livros;
